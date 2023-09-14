@@ -12,4 +12,3 @@ pub unsafe extern "C" fn incr() -> u32 {
 
     return CTX.i;
 }
-

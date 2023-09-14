@@ -3,16 +3,26 @@ name = "rustlib"
 version = "0.1.0"
 edition = "2021"
 
+[build-dependencies]
+cbindgen = "0.26.0"
+
+[dependencies]
+internal = { version = "0.1.0", path = "internal" }
+
+rapier3d = { version = "0.17.2", features = [ "simd-stable" ], optional = true}
+
+[features]
+test-deps = ["rapier3d"]
 
 [lib]
 name = "rustlib"
 crate-type = ["cdylib"]      # Creates dynamic lib
 # crate-type = ["staticlib"] # Creates static lib
 
+[[bin]]
+name = "test"
+path = "src/test/main.rs"
+required-features = ["test-deps"]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-[dependencies]
 
-[build-dependencies]
-cbindgen = "0.26.0"

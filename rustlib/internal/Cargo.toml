@@ -1,0 +1,7 @@
+[package]
+name = "internal"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rapier3d = { version = "0.17.2", features = [ "simd-stable" ] }

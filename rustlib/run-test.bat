@@ -1,0 +1,1 @@
+cargo run --bin test --features="test-deps"
