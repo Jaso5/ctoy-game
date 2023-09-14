@@ -81,23 +81,25 @@ void update_cam(Camera* cam) {
     vec3 move = {sin(cam->view[1]), 0.0, cos(cam->view[1])};
     vec3 m_axis = {0.0f, 0.0f, 0.0f};
 
+    const float SPEED = 0.2;
+
     if (ctoy_key_pressed(CTOY_KEY_W)) {
-        m_axis[2] += 0.1;
+        m_axis[2] += SPEED;
     }
     if (ctoy_key_pressed(CTOY_KEY_S)) {
-        m_axis[2] -= 0.1;
+        m_axis[2] -= SPEED;
     }
     if (ctoy_key_pressed(CTOY_KEY_A)) {
-        m_axis[0] += 0.1;
+        m_axis[0] += SPEED;
     }
     if (ctoy_key_pressed(CTOY_KEY_D)) {
-        m_axis[0] -= 0.1;
+        m_axis[0] -= SPEED;
+    }
+    if (ctoy_key_pressed(CTOY_KEY_LEFT)) {
+        m_axis[1] += SPEED;
     }
     if (ctoy_key_pressed(CTOY_KEY_SPACE)) {
-        m_axis[1] += 0.1;
-    }
-    if (ctoy_key_pressed(CTOY_KEY_LEFT_SHIFT)) {
-        m_axis[1] -= 0.1;
+        m_axis[1] -= SPEED;
     }
 
     vec3 axis = {0.0, -1.0, 0.0};
@@ -109,7 +111,7 @@ void update_cam(Camera* cam) {
     glm_vec3_add(cam->pos, m_axis, cam->pos);
 
     // LOOKING
-    float accel = 0.3f;
+    float accel = 0.15f;
 
     cam->view[1] += mouse_dx() * accel;
     cam->view[0] += mouse_dy() * accel;

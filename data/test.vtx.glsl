@@ -10,6 +10,6 @@ uniform mat4 camProj;
 
 
 void main() {
-    gl_Position = camProj * camView * vec4(vPos, 1.0); // camProj *
+    gl_Position = camProj * camView * vec4(vPos, 1.0);
     fCol = vCol;
 }

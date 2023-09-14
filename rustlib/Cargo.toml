@@ -1,0 +1,18 @@
+[package]
+name = "rustlib"
+version = "0.1.0"
+edition = "2021"
+
+
+[lib]
+name = "rustlib"
+crate-type = ["cdylib"]      # Creates dynamic lib
+# crate-type = ["staticlib"] # Creates static lib
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[build-dependencies]
+cbindgen = "0.26.0"
