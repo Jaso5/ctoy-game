@@ -10,13 +10,6 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-typedef struct TestStruct {
-  uint32_t a;
-  uint8_t b;
-} TestStruct;
-
-uint32_t double_u32(uint32_t x);
-
-struct TestStruct get_struct(void);
+uint32_t incr(void);
 
 /* Rustlib end! */

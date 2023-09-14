@@ -95,7 +95,7 @@ void update_cam(Camera* cam) {
     if (ctoy_key_pressed(CTOY_KEY_D)) {
         m_axis[0] -= SPEED;
     }
-    if (ctoy_key_pressed(CTOY_KEY_LEFT)) {
+    if (ctoy_key_pressed(CTOY_KEY_LEFT_SHIFT)) {
         m_axis[1] += SPEED;
     }
     if (ctoy_key_pressed(CTOY_KEY_SPACE)) {

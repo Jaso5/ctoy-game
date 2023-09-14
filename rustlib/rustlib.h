@@ -10,6 +10,6 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-uint32_t double_u32(uint32_t x);
+uint32_t incr(void);
 
 /* Rustlib end! */

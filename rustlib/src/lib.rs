@@ -1,6 +1,15 @@
+static mut CTX: LibCtx = LibCtx {
+    i: 0
+};
+
+struct LibCtx {
+    i: u32
+}
 
 #[no_mangle]
-pub extern "C" fn double_u32(x: u32) -> u32 {
-    x * 2
+pub unsafe extern "C" fn incr() -> u32 {
+    CTX.i += 1;
+
+    return CTX.i;
 }
 
